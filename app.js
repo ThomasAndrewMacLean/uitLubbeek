@@ -53,10 +53,15 @@ api.get("/uitLubbeek", (req, res) => {
       const params = {
         TableName: "uitLubbeek",
         Item: {
-          id: element.naam + ":" + element.user,
+          id: element.naam + "/" + element.user,
           naam: element.naam,
           user: element.user,
           tweetId: element.tweetId,
+          link:
+            "https://twitter.com/" +
+            element.user +
+            "/status/" +
+            element.tweetId,
         },
       };
       dynamoDb.put(params).promise();
@@ -66,12 +71,20 @@ api.get("/uitLubbeek", (req, res) => {
   });
 });
 
-api.get('/all', () => {
+api.get("/all", () => {
   // GET all users
   return dynamoDb
-      .scan({ TableName: 'uitLubbeek' })
-      .promise()
-      .then(response => response.Items);
+    .scan({ TableName: "uitLubbeek" })
+    .promise()
+    .then((response) => response.Items.map((x) => x.naam));
+});
+
+api.get("/allRaw", () => {
+  // GET all users
+  return dynamoDb
+    .scan({ TableName: "uitLubbeek" })
+    .promise()
+    .then((response) => response.Items);
 });
 
 api.get("/ping", function (request) {
