@@ -15,8 +15,6 @@ return T.get(
   "search/tweets",
   {
     q: "uit lubbeek",
-    //  from: "implosionblue",
-    //  count: 100,
     tweet_mode: "extended",
   },
   function (err, data, response) {

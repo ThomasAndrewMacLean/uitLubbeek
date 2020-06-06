@@ -15,8 +15,6 @@ const T = new Twit({
 api.get("/uitLubbeek", (req, res) => {
   return T.get("search/tweets", {
     q: "uit lubbeek",
-    //  from: "implosionblue",
-    //  count: 100,
     tweet_mode: "extended",
   }).then((x) => {
     const y = x.data.statuses
