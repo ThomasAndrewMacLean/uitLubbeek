@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "uit-lubbeek-executor",
+    "name": "uit-lubbeek",
+    "region": "eu-west-1"
+  },
+  "api": {
+    "id": "a9d9jqx3i1",
+    "module": "app"
+  }
+}

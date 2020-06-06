@@ -1,0 +1,24 @@
+{
+  "name": "uit-lubbeek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "claudia create --version dev --region eu-west-1 --api-module app --set-env-from-json .env.json --profile claudia",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "claudia update --version dev --set-env-from-json .env.json --profile claudia",
+    "server": "claudia-local-api --api-module app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.691.0",
+    "claudia-api-builder": "^4.1.2",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "claudia": "^5.12.0",
+    "claudia-local-api": "^3.0.4"
+  }
+}
